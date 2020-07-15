@@ -3,6 +3,7 @@ import Spinner from "./Spinner";
 import axios from "axios";
 import Table from "./Table";
 import Pagination from "./Pagination";
+import { apiUrl } from "./api";
 class CryptoList extends Component {
   state = {
     loading: false,
@@ -21,9 +22,9 @@ class CryptoList extends Component {
       loading: true,
     });
     const { page } = this.state;
-    const apiUrl = `https://api.udilia.com/coins/v1/cryptocurrencies?page=${page}&perPage=20`;
+    const api = `${apiUrl}/cryptocurrencies?page=${page}&perPage=20`;
 
-    const res = await axios.get(apiUrl);
+    const res = await axios.get(api);
     const response = res.data;
     console.log(response);
     this.setState({
