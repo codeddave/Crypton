@@ -31,6 +31,15 @@ class CryptoDetail extends Component {
       console.log(error);
     }
   }
+  handlePercent = (percent) => {
+    if (percent > 0) {
+      return <span className="percent-increase">{percent}% &uarr;</span>;
+    } else if (percent < 0) {
+      return <span className="percent-drop">{percent}% &darr;</span>;
+    } else {
+      return <span>{percent}</span>;
+    }
+  };
 
   render() {
     const { currency } = this.state;
@@ -39,21 +48,38 @@ class CryptoDetail extends Component {
         {this.state.loading ? (
           <Spinner />
         ) : (
-          <div className="details shadow-lg">
-            {" "}
+          <div>
             <div>
-              <p>
+              <h1 className="text-center mt-4">
                 {currency.name} <span>({currency.symbol})</span>
-              </p>
+              </h1>
             </div>
-            <div>
-              Rank <span>{currency.rank}</span>
-            </div>{" "}
-            <div>
-              Price <span>${currency.price}</span>
-            </div>
-            <div>
-              Market Cap <span>${currency.marketCap}</span>
+            <div className="details shadow-lg">
+              {" "}
+              <div className="detail-item">
+                Rank <span className="detail-value">{currency.rank}</span>
+              </div>{" "}
+              <div className="detail-item">
+                Price <span className="detail-value">${currency.price}</span>
+              </div>
+              <div className="detail-item">
+                24H Change{" "}
+                <span className="detail-value">
+                  {this.handlePercent(currency.percentChange24h)}
+                </span>
+              </div>
+              <div className="detail-item">
+                Market Cap{" "}
+                <span className="detail-value">${currency.marketCap}</span>
+              </div>
+              <div className="detail-item">
+                24H Volume
+                <span className="detail-value">${currency.volume24h}</span>
+              </div>
+              <div className="detail-item">
+                Total Supply
+                <span className="detail-value">${currency.totalSupply}</span>
+              </div>
             </div>
           </div>
         )}
