@@ -4,6 +4,7 @@ import axios from "axios";
 import Table from "./Table";
 import Pagination from "./Pagination";
 import { apiUrl } from "./api";
+import "./CryptoList.css";
 class CryptoList extends Component {
   state = {
     loading: false,

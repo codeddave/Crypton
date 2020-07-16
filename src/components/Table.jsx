@@ -2,21 +2,23 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 
+import "./Table.css";
+
 function Table(props) {
   const { currencies, history } = props;
 
   const handlePercent = (percent) => {
     if (percent > 0) {
-      return <span className="percent-increase">{percent}%</span>;
+      return <span className="percent-increase">{percent}% &uarr;</span>;
     } else if (percent < 0) {
-      return <span className="percent-drop">{percent}%</span>;
+      return <span className="percent-drop">{percent}% &darr;</span>;
     } else {
       return <span>{percent}</span>;
     }
   };
   return (
-    <div>
-      <table className="table">
+    <div className="table-wrap">
+      <table className="table ">
         <thead>
           <tr>
             <th scope="col">Currency</th>
@@ -29,6 +31,7 @@ function Table(props) {
           {currencies.map((currency) => {
             return (
               <tr
+                className="shadow-lg"
                 style={{ cursor: "pointer" }}
                 key={currency.id}
                 onClick={() => history.push(`currency/${currency.id}`)}
