@@ -9,7 +9,7 @@ function Header() {
         <i className="fas fa-coins logo-coin"></i>
         <span className="crypton">Crypton</span>
       </a>
-      <SearchBar />
+      <SearchBar width="12px" height="12px" />
     </div>
   );
 }

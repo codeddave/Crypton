@@ -10,3 +10,10 @@
   color: white;
   font-size: 25px;
 }
+
+@media (width: 420px) {
+  .crypton {
+    color: white;
+    font-size: 21px;
+  }
+}

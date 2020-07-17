@@ -1,5 +1,10 @@
+body {
+  z-index: 1;
+}
+
 .table-wrap {
   margin-top: 40px;
+  z-index: 1;
 }
 
 tr {
@@ -22,4 +27,10 @@ thead tr {
 }
 .percent-drop {
   color: #ef1e11;
+}
+
+@media (width: 420px) {
+  thead {
+    font-size: 15px;
+  }
 }
