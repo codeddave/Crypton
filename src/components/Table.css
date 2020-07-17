@@ -29,8 +29,11 @@ thead tr {
   color: #ef1e11;
 }
 
-@media (width: 420px) {
-  thead {
-    font-size: 15px;
+@media (max-width: 560px) {
+  th {
+    font-size: 14px !important;
+  }
+  tr td {
+    font-size: 12px;
   }
 }

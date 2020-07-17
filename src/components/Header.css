@@ -11,9 +11,9 @@
   font-size: 25px;
 }
 
-@media (width: 420px) {
+@media (max-width: 560px) {
   .crypton {
     color: white;
-    font-size: 21px;
+    font-size: 19px;
   }
 }
