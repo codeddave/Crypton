@@ -1,4 +1,5 @@
 import React from "react";
+import SearchBar from "./SearchBar";
 import "./Header.css";
 
 function Header() {
@@ -8,6 +9,7 @@ function Header() {
         <i className="fas fa-coins logo-coin"></i>
         <span className="crypton">Crypton</span>
       </a>
+      <SearchBar />
     </div>
   );
 }

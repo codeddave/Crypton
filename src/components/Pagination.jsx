@@ -6,8 +6,12 @@ import "./Pagination.css";
 function Pagination(props) {
   const { page, totalPages, handlePagination } = props;
   return (
-    <div className="mx-auto">
-      <button onClick={() => handlePagination("prev")} disabled={page <= 1}>
+    <div className="mx-auto text-center">
+      <button
+        onClick={() => handlePagination("prev")}
+        disabled={page <= 1}
+        className="page-button mr-2"
+      >
         &larr;
       </button>
 
@@ -17,6 +21,7 @@ function Pagination(props) {
       <button
         onClick={() => handlePagination("next")}
         disabled={page >= totalPages}
+        className="page-button ml-2"
       >
         &rarr;
       </button>

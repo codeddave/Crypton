@@ -17,7 +17,7 @@ function Table(props) {
     }
   };
   return (
-    <div className="table-wrap">
+    <div className="table-wrap container">
       <table className="table ">
         <thead>
           <tr>
