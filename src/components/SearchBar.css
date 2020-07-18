@@ -17,6 +17,7 @@
 }
 .search-result {
   border-bottom: 3px solid black;
+  cursor: pointer;
 }
 @media (max-width: 560px) {
   .search input {
