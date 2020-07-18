@@ -1,10 +1,5 @@
-body {
-  z-index: 1;
-}
-
 .table-wrap {
   margin-top: 40px;
-  z-index: 1;
 }
 
 tr {

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter, Link } from "react-router-dom";
 import Spinner from "./Spinner";
 
 import { apiUrl } from "./api";
@@ -48,7 +49,11 @@ class SearchBar extends Component {
       return (
         <div className="search-results-wrap shadow">
           {searchResults.map((item) => (
-            <div key={item.id} className="search-result">
+            <div
+              key={item.id}
+              className="search-result"
+              onClick={() => this.handleRedirect(item.id)}
+            >
               {item.name} ({item.symbol})
             </div>
           ))}
@@ -64,6 +69,14 @@ class SearchBar extends Component {
       );
     }
   }
+  handleRedirect(currencyId) {
+    this.setState({
+      searchQuery: "",
+      searchResults: [],
+    });
+    this.props.history.push(`/currency/${currencyId}`);
+  }
+
   render() {
     const { loading, searchQuery } = this.state;
     return (
@@ -81,4 +94,4 @@ class SearchBar extends Component {
     );
   }
 }
-export default SearchBar;
+export default withRouter(SearchBar);

@@ -2,20 +2,21 @@
   margin-top: -30px;
 }
 .search-results-wrap {
+  position: relative;
   height: 100%;
   width: 300px;
-  border: 3px solid white;
+  border: 3px solid black;
   margin: auto;
   font-weight: bold;
-  background-color: black;
+  background-color: #191a19;
   border-radius: 4px;
 
   overflow-y: auto;
-  z-index: 2;
+  z-index: 2 !important;
   margin-top: 10px;
 }
 .search-result {
-  border-bottom: 2px solid white;
+  border-bottom: 3px solid black;
 }
 @media (max-width: 560px) {
   .search input {
@@ -24,7 +25,7 @@
     margin-left: 20px;
   }
   .search input::placeholder {
-    font-size: 13px;
+    font-size: 11px;
   }
   .search-results-wrap {
     height: 100%;

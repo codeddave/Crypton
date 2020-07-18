@@ -13,12 +13,23 @@ class CryptoDetail extends Component {
     this.setState({
       loading: true,
     });
-    this.fetchDetail();
+    const currencyId = this.props.match.params.id;
+    this.fetchDetail(currencyId);
   }
 
-  async fetchDetail() {
+  //To update detail component
+  componentWillReceiveProps(nextProps) {
+    //If url changes, call fetchDetail function again with new id to upte detail component
+    if (this.props.location.pathname !== nextProps.location.pathname) {
+      const newCurrencyId = nextProps.match.params.id;
+
+      this.fetchDetail(newCurrencyId);
+    }
+  }
+
+  async fetchDetail(id) {
     try {
-      const api = `${apiUrl}/cryptocurrencies/${this.props.match.params.id}`;
+      const api = `${apiUrl}/cryptocurrencies/${id}`;
       const res = await axios.get(api);
       const response = res.data;
 
@@ -42,10 +53,10 @@ class CryptoDetail extends Component {
   };
 
   render() {
-    const { currency } = this.state;
+    const { currency, loading } = this.state;
     return (
       <div>
-        {this.state.loading ? (
+        {loading ? (
           <Spinner />
         ) : (
           <div>
