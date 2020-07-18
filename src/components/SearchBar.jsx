@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import Spinner from "./Spinner";
 
 import { apiUrl } from "./api";
@@ -31,13 +31,11 @@ class SearchBar extends Component {
     fetch(`${apiUrl}/autocomplete?searchQuery=${this.state.searchQuery}`)
       .then((result) => result.json())
       .then((result) => {
-        console.log(result);
         this.setState({
           loading: false,
           searchResults: result,
         });
       });
-    console.log(this.state.searchResults);
   }
   renderSearchResults() {
     const { searchResults, loading, searchQuery } = this.state;

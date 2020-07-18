@@ -27,7 +27,7 @@ class CryptoList extends Component {
 
     const res = await axios.get(api);
     const response = res.data;
-    console.log(response);
+
     this.setState({
       currencies: response.currencies,
       loading: false,
