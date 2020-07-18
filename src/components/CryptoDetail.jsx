@@ -21,6 +21,7 @@ class CryptoDetail extends Component {
   componentWillReceiveProps(nextProps) {
     //If url changes, call fetchDetail function again with new id to upte detail component
     if (this.props.location.pathname !== nextProps.location.pathname) {
+      //Get new currency from url
       const newCurrencyId = nextProps.match.params.id;
 
       this.fetchDetail(newCurrencyId);
@@ -37,7 +38,6 @@ class CryptoDetail extends Component {
         currency: response,
         loading: false,
       });
-      console.log(this.state.currency);
     } catch (error) {
       console.log(error);
     }

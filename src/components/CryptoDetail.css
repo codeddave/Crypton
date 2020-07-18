@@ -18,3 +18,11 @@
 .detail-item {
   margin-bottom: 47px;
 }
+@media (max-width: 560px) {
+  h1 {
+    font-size: 23px;
+  }
+  .details {
+    margin: 20px auto;
+  }
+}
